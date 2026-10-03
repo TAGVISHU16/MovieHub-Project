@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -40,6 +40,157 @@
 
     <div id="movieHub"></div>
     <script src="index.js"></script>
+</body>
+
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Movie Hub</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="min-h-screen bg-black text-white selection:bg-red-600 selection:text-white">
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800 bg-black/90 backdrop-blur-md">
+
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
+
+            <!-- Logo -->
+            <div class="flex items-center gap-2">
+
+                <svg class="h-8 w-8 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M4 4h16a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6a2 2 0 012-2zm0 2v3h2.5l1.5-3H4zm4.5 0l-1.5 3h3l1.5-3H8.5zm5 0l-1.5 3h3l1.5-3h-3zm5 0l-1.5 3H20V6h-1.5zM4 11v7h16v-7H4z" />
+                </svg>
+
+                <h1 class="text-2xl font-bold tracking-wide">
+                    Movie<span class="text-red-600">Hub</span>
+                </h1>
+
+            </div>
+
+            <!-- Hamburger -->
+            <button id="hamburger"
+                class="rounded-lg p-2 transition hover:bg-zinc-800"
+                aria-label="Menu">
+
+                <svg class="h-7 w-7" fill="none" stroke="currentColor"
+                    stroke-width="2" viewBox="0 0 24 24">
+
+                    <path stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M4 6h16M4 12h16M4 18h16" />
+
+                </svg>
+
+            </button>
+
+        </div>
+
+        <!-- Menu -->
+        <div id="options"
+            class="hidden border-t border-zinc-800 bg-zinc-950">
+
+            <div class="mx-auto max-w-7xl px-6 py-4">
+
+                <div class="flex flex-col gap-3 text-zinc-300">
+
+                    <a href="#" class="transition hover:text-red-500">
+                        Home
+                    </a>
+
+                    <a href="#" class="transition hover:text-red-500">
+                        Movies
+                    </a>
+
+                    <a href="#" class="transition hover:text-red-500">
+                        About
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO / SEARCH ================= -->
+
+    <main class="px-5 pt-32 pb-10">
+
+        <section class="mx-auto max-w-5xl text-center">
+
+            <h2 class="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
+
+                Find Your
+                <span class="text-red-600">Favorite Movies</span>
+
+            </h2>
+
+            <p class="mx-auto mt-5 max-w-2xl text-base text-zinc-400 sm:text-lg">
+
+                Search thousands of movies and discover their ratings,
+                cast, plot and more.
+
+            </p>
+
+
+            <!-- Search Form -->
+
+            <form id="movieForm"
+                class="mx-auto mt-8 flex max-w-2xl flex-col gap-3 sm:flex-row">
+
+                <input
+                    id="movieInput"
+                    type="text"
+                    placeholder="Search movie title (e.g. Inception, The Matrix)..."
+                    class="w-full rounded-xl border border-zinc-700 bg-zinc-900 px-5 py-4 text-white outline-none transition placeholder:text-zinc-500 focus:border-red-600 focus:ring-2 focus:ring-red-600/30">
+
+                <button
+                    type="submit"
+                    class="rounded-xl bg-red-600 px-8 py-4 font-semibold transition hover:bg-red-700 active:scale-95">
+
+                    Search
+
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- ================= MOVIE RESULTS ================= -->
+
+        <section class="mx-auto mt-12 max-w-7xl">
+
+            <div id="movieHub"
+                class="grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="index.js"></script>
+
 </body>
 
 </html>
