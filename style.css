@@ -1,5 +1,5 @@
 /* HTML: <div class="loader"></div> */
-.loader {
+/* .loader {
   width: fit-content;
   font-weight: bold;
   font-family: sans-serif;
@@ -11,4 +11,39 @@
 .loader:before {
   content:"Loading..."
 }
-@keyframes l2 {to{background-size: 100% 3px}}
+@keyframes l2 {to{background-size: 100% 3px}} */
+
+
+.loader {
+    width: 80px;
+    height: 4px;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #27272a;
+}
+
+.loader::after {
+    content: "";
+    width: 40%;
+    height: 100%;
+    background: #dc2626;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+    animation: loading 1s infinite ease-in-out;
+}
+
+@keyframes loading {
+
+    0% {
+        left: -40%;
+    }
+
+    100% {
+        left: 100%;
+    }
+
+}
